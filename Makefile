@@ -4,10 +4,10 @@ output_data/ny_merge.tif: output_data/grdn41w075_13.tif output_data/grdn41w074_1
 	gdal_merge.py -of GTiff -o $@ $^
 
 output_data/grdn41w075_13.tif: output_data/USGS_NED_13_n41w075_ArcGrid
-	gdal_translate -of GTiff src_data/USGS_NED_13_n41w075_ArcGrid/grdn41w075_13 $@
+	gdal_translate -of GTiff output_data/USGS_NED_13_n41w075_ArcGrid/grdn41w075_13 $@
 
 output_data/grdn41w074_13.tif: output_data/USGS_NED_13_n41w074_ArcGrid
-	gdal_translate -of GTiff src_data/USGS_NED_13_n41w074_ArcGrid/grdn41w074_13 $@
+	gdal_translate -of GTiff output_data/USGS_NED_13_n41w074_ArcGrid/grdn41w074_13 $@
 
 output_data/USGS_NED_13_n41w075_ArcGrid: output_data/USGS_NED_13_n41w075_ArcGrid.zip
 	unzip $< -d $@  

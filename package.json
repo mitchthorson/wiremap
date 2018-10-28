@@ -1,0 +1,23 @@
+{
+  "name": "wiremap",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server src -o"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mitchthorson/wiremap.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mitchthorson/wiremap/issues"
+  },
+  "homepage": "https://github.com/mitchthorson/wiremap#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
+}

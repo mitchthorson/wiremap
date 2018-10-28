@@ -1,5 +1,8 @@
 .PHONY: output_data
 
+output_data/ny_crop.bin: output_data/ny_crop.tif
+	gdal_translate -scale -25.011 113.742 0 65535 -ot UInt16 -of ENVI $< $@
+
 output_data/ny_crop.tif: output_data/ny_merge.tif
 	gdalwarp -te -74.0196973 40.6899 -73.9103 40.8784 $< $@
 

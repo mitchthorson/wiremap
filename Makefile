@@ -13,10 +13,10 @@ output_data/grdn41w074_13.tif: output_data/USGS_NED_13_n41w074_ArcGrid
 	gdal_translate -of Gtiff output_data/USGS_NED_13_n41w074_ArcGrid/grdn41w074_13 $@
 
 output_data/USGS_NED_13_n41w075_ArcGrid: output_data/USGS_NED_13_n41w075_ArcGrid.zip
-	unzip $< -d $@  
+	unzip -o $< -d $@  
 
 output_data/USGS_NED_13_n41w074_ArcGrid: output_data/USGS_NED_13_n41w074_ArcGrid.zip
-	unzip $< -d $@      
+	unzip -o $< -d $@      
 
 output_data/USGS_NED_13_n41w075_ArcGrid.zip: output_data
 	curl -o $@ https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/13/ArcGrid/USGS_NED_13_n41w075_ArcGrid.zip

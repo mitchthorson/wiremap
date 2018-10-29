@@ -1,7 +1,7 @@
 .PHONY: output_data
 
 output_data/ny_crop.bin: output_data/ny_crop.tif
-	gdal_translate -scale -25.011 113.742 0 65535 -ot UInt16 -of ENVI $< $@
+	gdal_translate -scale -25.011 113.742 0 65535 -outsize 394 679 -ot UInt16 -of ENVI $< $@
 
 output_data/ny_crop.tif: output_data/ny_merge.tif
 	gdalwarp -te -74.0196973 40.6899 -73.9103 40.8784 $< $@
@@ -19,7 +19,7 @@ output_data/USGS_NED_13_n41w075_ArcGrid: output_data/USGS_NED_13_n41w075_ArcGrid
 	unzip -o $< -d $@  
 
 output_data/USGS_NED_13_n41w074_ArcGrid: output_data/USGS_NED_13_n41w074_ArcGrid.zip
-	unzip -o $< -d $@      
+	unzip -o $< -d $@    
 
 output_data/USGS_NED_13_n41w075_ArcGrid.zip: output_data
 	curl -o $@ https://prd-tnm.s3.amazonaws.com/StagedProducts/Elevation/13/ArcGrid/USGS_NED_13_n41w075_ArcGrid.zip
